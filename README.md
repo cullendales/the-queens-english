@@ -4,7 +4,7 @@
 
 
 ## About
-This program allows users to write any program with Canadian spelling and then converts the necessary words to change (ie. colour to color) while running the program or uploading to GitHub without changing it on the user's side. For Canadian and most English speakers, this allows you to write English your natural way.
+This program allows users to write programs with Canadian spelling and then converts the necessary words to change (ie. colour to color) while running the program or uploading to GitHub without changing it on the user's side. For Canadian and most English speakers, this allows you to write English your natural way.
 
 ## Usage
 ### Python Version

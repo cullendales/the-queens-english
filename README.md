@@ -1,6 +1,6 @@
 # The Queen's English
 
-[b3f1c34806af9c898ac16cd0a664afcc41-GettyImages-515984032.2x.rsocial.w600.jpg.pdf](https://github.com/user-attachments/files/21529298/b3f1c34806af9c898ac16cd0a664afcc41-GettyImages-515984032.2x.rsocial.w600.jpg.pdf)
+![b3f1c34806af9c898ac16cd0a664afcc41-GettyImages-515984032 2x rsocial w600](https://github.com/user-attachments/assets/e1db0db3-ec0c-428c-b05e-1a6c7cc37b23)
 
 
 ## About

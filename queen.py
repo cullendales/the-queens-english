@@ -1,6 +1,10 @@
 import os
 import sys
 import re
+import tempfile
+import subprocess
+# from watchdog.observers import Observer
+# from watchdog.events import FileSystemEventHandler
 
 canadian_english = {
     # ou words
@@ -89,9 +93,19 @@ def main():
 
     file = sys.argv[1]
 
-    processed_file = process_file(file)
+    with open(file, 'r', encoding='utf-8') as f:
+        proper_english = f.read()
 
-    print(processed_file)
+    incorrect_english = convert_spelling(proper_english)
+
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as temp:
+        temp.write(incorrect_english)
+        temp_path = temp.name
+
+    try:
+        subprocess.run(['python', temp_path])
+    finally:
+        os.remove(temp_path)
 
 if __name__ == "__main__":
     main()

@@ -51,6 +51,9 @@ canadian_english = {
     'outline-colour' : 'outline-color',
     'text-decoration-colour' : 'text-decoration-color',
     'column-rule-colour' : 'column-rule-color',
+
+    #python functions
+    'kneighboursclassifier': 'KNeighborsClassifier'
 }
 
 

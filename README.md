@@ -7,10 +7,9 @@
 This program allows users to write programs in Python, HTML, & CSS using Canadian spelling and then converts the necessary words to change (ie. colour to color) while running the program without changing it on the user's side. For Canadian and most English speakers, this allows you to write English your natural way.
 
 ## Usage
-### Python Version
 1. Clone repository onto your local machine
 2. Add queen.py into the directory of the program you plan to run
-3. Run program using form: Python3 queen.py yourProgramHere.py
+3. Run program using form: Python3 queen.py yourProgramHere
 
 ## Roadmap
 - [x] Finish initial program which converts spelling using regex

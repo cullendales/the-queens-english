@@ -1,8 +1,19 @@
 # The Queen's English
 
+![b3f1c34806af9c898ac16cd0a664afcc41-GettyImages-515984032 2x rsocial w600](https://github.com/user-attachments/assets/e1db0db3-ec0c-428c-b05e-1a6c7cc37b23)
+
+
 ## About
-This program allows users to write any program with Canadian spelling and then converts the necessary words to change (ie. colour to color) while running the program or uploading to GitHub without changing it on the user's side. For Canadian and most English speakers, this allows you to write English your natural way and not have to bother with the Amaricanized spelling.
+This program allows users to write programs with Canadian spelling and then converts the necessary words to change (ie. colour to color) while running the program or uploading to GitHub without changing it on the user's side. For Canadian and most English speakers, this allows you to write English your natural way.
+
+## Usage
+### Python Version
+1. Clone repository onto your local machine
+2. Add queen.py into the directory of the program you plan to run
+3. Run program using form: Python3 queen.py yourProgramHere.py
 
 ## Roadmap
 - [x] Finish initial program which converts spelling using regex
-- [ ] Write program which can run in background and calls the conversion program
+- [x] Finish Python version which converts spelling when run while maintaining Canadian spelling
+- [ ] Create CSS, HTML version
+- [ ] Add in git hook capability

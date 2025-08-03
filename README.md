@@ -27,4 +27,4 @@ In the example above, there are three instances of Canadian English - two of whi
 <img width="691" height="57" alt="Screenshot 2025-08-03 at 6 39 06 PM" src="https://github.com/user-attachments/assets/6f17fef2-db50-49c7-8a6d-a3c5ea681fdb" />
 
 
-When the queen.py is run along with the test program, the English is changed temporarily to run but remains the same in the original test.py file.  
+When  queen.py is run along with the test program, the English is changed temporarily to run but remains the same in the original test.py file.  

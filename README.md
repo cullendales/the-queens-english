@@ -16,8 +16,8 @@ This program allows users to write programs in Python, HTML, & CSS using Canadia
 - [x] Finish Python version which converts spelling when run while maintaining Canadian spelling
 - [x] Create CSS, HTML version
 
-## Sample
-### Running using Python and KNeighborsClassifier
+## Example
+#### Running using Python and KNeighborsClassifier
 
 <img width="392" height="317" alt="Screenshot 2025-08-03 at 6 38 22 PM" src="https://github.com/user-attachments/assets/ae433cff-5eb4-41d4-8799-f9c06b27b5fa" />
 

@@ -3,8 +3,7 @@ import sys
 import re
 import tempfile
 import subprocess
-# from watchdog.observers import Observer
-# from watchdog.events import FileSystemEventHandler
+import webbrowser
 
 canadian_english = {
     # ou words
@@ -90,22 +89,65 @@ def process_file(file):
     
 
 def main():
-
     file = sys.argv[1]
 
-    with open(file, 'r', encoding='utf-8') as f:
-        proper_english = f.read()
+    if not os.path.isfile(file):
+        print(f"Error: File {file} not found.")
+        return
 
-    incorrect_english = convert_spelling(proper_english)
+    _, ext = os.path.splitext(file)
 
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as temp:
-        temp.write(incorrect_english)
-        temp_path = temp.name
+    if ext.lower() == ".html":
+        with open(file, 'r', encoding='utf-8') as f:
+            html_text = f.read()
 
-    try:
-        subprocess.run(['python', temp_path])
-    finally:
-        os.remove(temp_path)
+        css_links = re.findall(r'href=["\'](.*?\.css)["\']', html_text)
+
+        css_map = {}
+
+        for css_file in css_links:
+            if os.path.exists(css_file):
+                with open(css_file, 'r', encoding='utf-8') as f:
+                    css_text = f.read()
+                css_converted = convert_spelling(css_text)
+
+                css_temp = tempfile.NamedTemporaryFile(mode='w', suffix='.css', delete=False, encoding='utf-8')
+                css_temp.write(css_converted)
+                css_temp_path = css_temp.name
+                css_temp.close()
+
+                css_map[css_file] = css_temp_path
+            else:
+                print(f"Warning: linked CSS file {css_file} not found")
+
+        for orig_css, temp_css in css_map.items():
+            html_text = html_text.replace(orig_css, temp_css)
+
+        html_temp = tempfile.NamedTemporaryFile(mode='w', suffix='.html', delete=False, encoding='utf-8')
+        html_temp.write(html_text)
+        html_temp_path = html_temp.name
+        html_temp.close()
+
+        webbrowser.open(f"file://{html_temp_path}")
+
+    else:
+        with open(file, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        converted = convert_spelling(content)
+        with tempfile.NamedTemporaryFile(mode='w', suffix=ext, delete=False, encoding='utf-8') as temp:
+            temp.write(converted)
+            temp_path = temp.name
+
+        if ext.lower() == ".py":
+            try:
+                subprocess.run(['python', temp_path])
+            finally:
+                os.remove(temp_path)
+        elif ext.lower() == ".css":
+            subprocess.run(["open", temp_path])
+        else:
+            print("Sorry, file type unsupported currently.")
 
 if __name__ == "__main__":
     main()
